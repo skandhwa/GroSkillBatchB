@@ -1,0 +1,148 @@
+FIRST
+--------------------
+
+create table simplilearn_15july.Employee2
+(Employee_ID int,
+Employee_Name varchar(255),
+Salary int)
+
+select * from simplilearn_15july.Employee2;
+Alter table simplilearn_15july.Employee ADD Address varchar(255);
+
+Insert into simplilearn_15july.Employee2 Values ('6789','Manish',80000,'Mumbai');
+Insert into simplilearn_15july.Employee2 Values ('1789','Raju',80000,'Kolkata');
+Insert into simplilearn_15july.Employee2 Values ('2789','Harish',90000,'Delhi');
+Insert into simplilearn_15july.Employee2 Values ('9789','Girish',120000,'Kolkata');
+DROP table simplilearn_15july.Employee;
+
+TRUNCATE table simplilearn_15july.Employee;
+
+
+update simplilearn_15july.Employee set salary=280000 where Employee_Name='Manish';
+begin;
+update simplilearn_15july.Employee set salary=280000 where Employee_Name='Manish';
+commit;
+rollback;
+
+
+delete from simplilearn_15july.Employee where Address='Kolkata'
+
+
+SECOND
+-----------------------
+
+create table simplilearn_16july.Employee2
+(Employee_ID int,
+Employee_Name varchar(255),
+Salary int)
+
+select Employee_ID,Employee_Name  from simplilearn_16july.Employee2;
+
+Alter table simplilearn_16july.Employee2 ADD Mobile_Number varchar(255);
+Alter table simplilearn_16july.Employee2 DROP Column Address;
+Insert into simplilearn_16july.Employee2 Values (6789,'Manish',80000,'Mumbai');
+Insert into simplilearn_16july.Employee2 Values (7789,'Girish',100000,'Kolkata');
+Insert into simplilearn_16july.Employee2 Values (8789,'Harish',120000,'Delhi');
+Insert into simplilearn_16july.Employee2 Values (9789,'Suresh',150000,'Bangalore');
+Insert into simplilearn_16july.Employee2 Values (5467,null,150000,'Bangalore');
+Insert into simplilearn_16july.Employee2(Employee_ID,Employee_Name,Salary,Address)
+values
+(2789,'Ganesh',180000,'Hyderabad'),
+(4789,'Sukesh',60000,'Kota'),
+(5789,'Harsh',90000,'Bhubaneswar');
+
+Update simplilearn_16july.Employee2 set Salary=100000 where Employee_ID=4789;
+Delete from simplilearn_16july.Employee2 where Employee_Name='Sukesh';
+ Delete from simplilearn_16july.Employee2 where Employee_ID=2789 and Employee_Name='Ganesh' ;
+ 
+ create table simplilearn_16july.Employee3
+(Employee_ID int,
+Employee_Name varchar(255),
+Salary int);
+ Alter table simplilearn_16july.Employee3 ADD Address varchar(255);
+ Insert into simplilearn_16july.Employee3(Employee_ID,Employee_Name,Salary,Address)
+values
+(2789,'Ganesh',180000,'Hyderabad'),
+(4789,'Sukesh',60000,'Kota'),
+(5789,'Harsh',90000,'Bhubaneswar');
+
+select * from simplilearn_16july.Employee3;
+Alter table simplilearn_16july.Employee3 DROP Column Salary;
+DROP table simplilearn_16july.Employee3;
+TRUNCATE table simplilearn_16july.Employee3;
+
+
+
+
+
+
+
+THIRD
+--------------------------------
+
+create table simplilearn_16july.Employee5
+(Employee_ID int NOT NULL,
+Employee_Name varchar(255) NOT NULL,
+Salary int,
+Address varchar (255));
+
+Alter table simplilearn_16july.Employee5 Modify Address varchar (255) NOT NULL;
+Alter table simplilearn_16july.Employee5 Modify Salary int NOT NULL;
+
+
+select * from simplilearn_16july.Employee5;
+
+Insert into simplilearn_16july.Employee5 Values (6789,'Manish',80000,'Mumbai');
+Insert into simplilearn_16july.Employee5 Values (7789,'Girish',100000,'Kolkata');
+Insert into simplilearn_16july.Employee4 Values (8789,'Harish',120000,'Delhi');
+Insert into simplilearn_16july.Employee4 Values (9789,'Suresh',150000,'Bangalore');
+Insert into simplilearn_16july.Employee4 Values (null,null,150000,'Bangalore');
+Insert into simplilearn_16july.Employee4 Values (1789,'Rakesh',null,null);
+
+Insert into simplilearn_16july.Employee5 Values (6789,'Manish',80000,'Mumbai');
+Insert into simplilearn_16july.Employee5 Values (7789,'Girish',100000,'Kolkata');
+
+
+
+
+FOURTH
+-----------------------------------------------
+
+create table simplilearn_16july.Employee6
+(Employee_ID int ,
+Employee_Name varchar(255) ,
+Salary int,
+Address varchar (255),
+UNIQUE (Employee_ID),
+UNIQUE (Employee_Name));
+
+Insert into simplilearn_16july.Employee6 Values (6789,'Manish',80000,'Mumbai');
+Insert into simplilearn_16july.Employee6 Values (7789,'Girish',100000,'Kolkata');
+Insert into simplilearn_16july.Employee6 Values (9543,'Mahesh',200000,'Kolkata');
+Insert into simplilearn_16july.Employee6 Values (9543,'Mahesh',200000,null);
+select * from simplilearn_16july.Employee6;
+
+Alter Table simplilearn_16july.Employee6 Add UNIQUE(Address);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
